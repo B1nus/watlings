@@ -9,7 +9,7 @@
     "show": "node scripts/show-solution.mjs"
   },
   "dependencies": {
-    "wabt": "^1.0.32"
+    "wabt": "^1.0.36"
   },
   "devDependencies": {
     "@types/node": "^20.11.16"

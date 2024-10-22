@@ -14,7 +14,7 @@
   (import "env" "log" (func $log_num (param i32)))
 
   (func $main
-    ;; TODO: call $log_num here
+        (call $log_num (i32.const 42))
   )
 
   (start $main)
