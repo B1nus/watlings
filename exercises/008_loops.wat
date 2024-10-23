@@ -69,6 +69,23 @@
   (func $count_even_until (param $end i32)
     ;; TODO: call $log_num for every even number starting at 0.
     ;; Log until $end exclusive (do not log $end)
+    (local $i i32)
+    (local.set $i (i32.const 0))
+    (loop $loop
+      (call $log_num (local.get $i))
+      (local.set $i
+        (i32.add (local.get $i) (i32.const 2))
+      )
+
+      (if
+        (i32.ge_s (local.get $i) (local.get $end))
+        (then
+          (return)
+        )
+      )
+
+      (br $loop)
+    )
   )
 
   (export "countDown" (func $count_down))

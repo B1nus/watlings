@@ -59,6 +59,7 @@
   (func (export "getNum") (param $num i32) (result i32)
     ;; TODO:
     ;; return 42 if even, 100 if odd
+    (select (i32.const 42) (i32.const 100) (call $is_even (local.get $num)))
   )
 
   (export "isEven" (func $is_even))

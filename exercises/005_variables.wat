@@ -28,6 +28,9 @@
     (local $local_num i32)
 
     ;; TODO: set $local_num to be double the value of $global_num_import
+    (local.set $local_num
+      (i32.mul (global.get $global_num_import) (i32.const 2))
+    )
 
     (local.get $local_num)
   )

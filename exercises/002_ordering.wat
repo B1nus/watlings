@@ -23,7 +23,18 @@
   (import "env" "log" (func $log_nums (param i32) (param i32) (param i32)))
 
   (func $main
-      ;; TODO: call $log_nums here
+      ;; (call $log_nums (i32.const 1) (i32.const 2) (i32.const 3))
+
+      ;; i32.const 1
+      ;; i32.const 2
+      ;; i32.const 3
+      ;; call $log_nums
+
+      (call $log_nums
+        (i32.const 1)
+        (i32.const 2)
+        (i32.const 3)
+      )
   )
 
   (start $main)

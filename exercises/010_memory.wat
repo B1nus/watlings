@@ -42,6 +42,22 @@
 
   (func $double_data (param $start i32) (param $end i32)
     ;; double all the values within the index range [$start, $end]
+    (local $index i32)
+    (local.set $index (local.get $start))
+    (loop $loop
+      (i32.store8
+        (local.get $index)
+        (i32.mul
+          (i32.load8_u (local.get $index))
+          (i32.const 2)
+        )
+      )
+      (local.set $index
+        (i32.add (local.get $index) (i32.const 1))
+      )
+      (i32.lt_u (local.get $index) (local.get $end))
+      (br_if $loop)
+    )
   )
 
   (export "incrementData" (func $increment_data))

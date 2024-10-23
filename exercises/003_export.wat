@@ -20,5 +20,5 @@
   )
 
   ;; TODO: replace this with an export
-  (start $main)
+  (export "main" (func $main))
 )
